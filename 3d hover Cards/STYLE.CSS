@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #131313;
+    
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    transform-style: preserve-3d;
+    
+}
+.container .box {
+    position: relative;
+    width: 300PX;
+    height: 400px;
+    margin: 40px;
+    background: #232323;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+    
+.container .box.one::before,
+.container .box.tow::before,
+.container .box.three::before
+{ 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 3em;
+    font-style: italic;
+    color: #fff;
+    font-weight: 900;
+    opacity: 0;
+    transition: .5s;
+    text-align: center;
+}
+.container .box.one::before {
+    content: "FERTYL";
+}
+.container .box.tow::before {
+    content: "CHARBON"; 
+}
+.container .box.three::before {
+    content: "ARTRO"; 
+}
+.container .box::after {
+    content: "BIOMAX";
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 3.5em;
+    font-style: italic;
+    color: #fff;
+    font-weight: 900;
+    opacity: 0;
+    transition: .5s;
+
+}
+.container .box:hover::after,
+.container .box:hover::before {
+    opacity: 0.4;
+}
+.container .box .name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+    color: #fff;
+}
+.container .box:hover .name {
+    top: 5px;
+    opacity: 1;
+}
+.container .box .buy {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+.container .box:hover .buy {
+    bottom: 30px;
+    opacity: 1;
+} 
+
+.container .box .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 170px;
+    height: 170px;
+    background: #fff;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,0px);  
+    transition: 0.5s; 
+    z-index: 10;
+}
+.container .box .product {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transition: .5s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px) rotate(-15deg);  
+}
+.container .box:nth-child(1) .circle,
+.container .box:nth-child(1) .buy {
+    background: #1b4590;
+}
+.container .box:nth-child(2) .circle,
+.container .box:nth-child(2) .buy {
+    background: #009ee0;
+}
+.container .box:nth-child(3) .circle,
+.container .box:nth-child(3) .buy {
+    background: #004f9e;
+}
